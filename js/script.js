@@ -8,20 +8,20 @@ form.addEventListener("submit", toDo);
 function toDo(event) {
   event.preventDefault();
 
-  let input = document.querySelector(".todo__input");
-  let inputText = input.value.trim();
+  const input = document.querySelector(".todo__input");
+  const inputText = input.value.trim();
 
   if (inputText === "") {
     return alert("You wrote empty string");
   }
 
-  let toDoItem = document.createElement("li");
+  const toDoItem = document.createElement("li");
   toDoItem.className = "todo__list-item";
 
-  let textNode = document.createTextNode(inputText);
+  const textNode = document.createTextNode(inputText);
   toDoItem.appendChild(textNode);
 
-  let deleteBtn = document.createElement("button");
+  const deleteBtn = document.createElement("button");
   deleteBtn.appendChild(document.createTextNode("Delete"));
   deleteBtn.className = "todo__btn";
   deleteBtn.dataset.action = "delete";
