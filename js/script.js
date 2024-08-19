@@ -9,7 +9,7 @@ function toDo(event) {
   event.preventDefault();
 
   let input = document.querySelector(".todo__input");
-  let inputText = input.value;
+  let inputText = input.value.trim();
 
   if (inputText === "") {
     return alert("You wrote empty string");
@@ -35,7 +35,7 @@ todoList.addEventListener("click", itemDelete);
 function itemDelete(event) {
   if (
     event.target.hasAttribute("data-action") &&
-    event.target.getAttribute("data-action") == "delete"
+    event.target.getAttribute("data-action") === "delete"
   ) {
     event.target.parentNode.remove();
   }
